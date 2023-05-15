@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "27850446904",
+    "project_id": "minor-2nd",
+    "storage_bucket": "minor-2nd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27850446904:android:3dbaf8e604be0b1efe6ecd",
+        "android_client_info": {
+          "package_name": "com.example.tango"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27850446904-8lcqp4vugv5adubuum8sek5rp3872is2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tango",
+            "certificate_hash": "8ac091ee7cd5f0052e854775a230e11c70ec9151"
+          }
+        },
+        {
+          "client_id": "27850446904-3p5s2vk050pakojv8t230rdghrrc1b9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdCU7hLVKEvk-jhnfSo2BRktiJMZgCKPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27850446904-3p5s2vk050pakojv8t230rdghrrc1b9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
