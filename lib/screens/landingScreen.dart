@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tango/screens/Add_Screen.dart';
 import 'package:tango/screens/home.dart';
 import 'package:tango/screens/profile.dart';
 
@@ -21,14 +22,14 @@ class _LandingScreenState extends State<LandingScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
+        backgroundColor:  Color.fromARGB(255, 208, 208, 255),
         selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
         currentIndex: pageIdx,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home, size: 30),
-            label: 'Home',
+            label: 'Groups',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add, size: 30),
@@ -56,4 +57,4 @@ class _LandingScreenState extends State<LandingScreen> {
   }
 }
 
-List<Widget> pages = [HomeScreen(),Text('add'), Profile()];
+List<Widget> pages = [HomeScreen(),AddGroup(), Profile()];

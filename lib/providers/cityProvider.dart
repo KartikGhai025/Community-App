@@ -7,6 +7,7 @@ String country="India";
 String state ="Mp";
 String city= "Guna";
 String grpName= "Avengers";
+bool isSelected= false;
 
 void selectGroup(String val){
   this.grpName= val;

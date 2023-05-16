@@ -2,12 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tango/providers/cityProvider.dart';
+import 'package:tango/screens/Add_Screen.dart';
 //import 'package:tango/providers/groupProvider.dart';
 import 'package:tango/screens/chat_screen.dart';
 import 'package:tango/screens/home.dart';
 import 'package:tango/screens/landingScreen.dart';
 import 'package:tango/screens/login_screen.dart';
 import 'package:tango/screens/registration_screen.dart';
+import 'package:tango/screens/temp.dart';
 import 'package:tango/screens/welcome_screen.dart';
 
 
@@ -44,7 +46,9 @@ class TangoApp extends StatelessWidget {
           'registrationscreen': (context)=> RegistrationScreen(),
           'chatscreen': (context)=> ChatScreen(),
           'homescreen': (context)=> HomeScreen(),
-          'landingscreen':(context)=> LandingScreen()
+          'landingscreen':(context)=> LandingScreen(),
+          'addscreen':(context)=>AddGroup(),
+          'profilescreen':(context)=> ProfileScreen()
         },
      ),
     );

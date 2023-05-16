@@ -38,6 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -53,20 +54,21 @@ class _ChatScreenState extends State<ChatScreen> {
 
 
     return Scaffold(
-      appBar: AppBar(
-        leading: Container(),
-        actions: <Widget>[
-          // IconButton(
-          //     icon: Icon(Icons.close),
-          //     onPressed: () async {
-          //       await _auth.signOut();
-          //       Navigator.pop(context);
-          //       //Implement logout functionality
-          //     }),
-        ],
-        title: Text('Group'),
-        backgroundColor: Colors.lightBlueAccent,
-      ),
+      appBar: buildAppBar(),
+      // AppBar(
+      //   leading: Container(),
+      //   actions: <Widget>[
+      //     // IconButton(
+      //     //     icon: Icon(Icons.close),
+      //     //     onPressed: () async {
+      //     //       await _auth.signOut();
+      //     //       Navigator.pop(context);
+      //     //       //Implement logout functionality
+      //     //     }),
+      //   ],
+      //   title: Text('Group'),
+      //   backgroundColor: Colors.lightBlueAccent,
+      // ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
