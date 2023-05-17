@@ -19,7 +19,7 @@ const kMessageContainerDecoration = BoxDecoration(
 );
 
 
-AppBar buildAppBar() {
+AppBar buildAppBar(String city, String group) {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0,
@@ -69,7 +69,7 @@ AppBar buildAppBar() {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Group',
+                        group,
                         overflow: TextOverflow.clip,
                         maxLines: 1,
                         style: TextStyle(
@@ -80,7 +80,7 @@ AppBar buildAppBar() {
                         ),
                       ),
                       Text(
-                        "unknown location",
+                        city,
                         overflow: TextOverflow.clip,
                         maxLines: 1,
                         style: TextStyle(

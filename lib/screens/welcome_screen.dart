@@ -16,13 +16,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Text(
-                  'Tango',
-
-                ),
-              ],
+            Center(
+              child: Text(
+                'Tango',
+ style: TextStyle(
+   fontSize: 50,
+   fontWeight: FontWeight.bold,
+   color:Colors.pinkAccent
+ ),
+              ),
             ),
             SizedBox(
               height: 48.0,
@@ -48,7 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.blueAccent,
+                color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(

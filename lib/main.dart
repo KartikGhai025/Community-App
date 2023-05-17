@@ -48,7 +48,7 @@ class TangoApp extends StatelessWidget {
           'homescreen': (context)=> HomeScreen(),
           'landingscreen':(context)=> LandingScreen(),
           'addscreen':(context)=>AddGroup(),
-          'profilescreen':(context)=> ProfileScreen()
+          'profilescreen':(context)=> ProfileApp()
         },
      ),
     );

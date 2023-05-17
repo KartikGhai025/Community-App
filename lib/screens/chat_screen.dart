@@ -53,71 +53,73 @@ class _ChatScreenState extends State<ChatScreen> {
 
 
 
-    return Scaffold(
-      appBar: buildAppBar(),
-      // AppBar(
-      //   leading: Container(),
-      //   actions: <Widget>[
-      //     // IconButton(
-      //     //     icon: Icon(Icons.close),
-      //     //     onPressed: () async {
-      //     //       await _auth.signOut();
-      //     //       Navigator.pop(context);
-      //     //       //Implement logout functionality
-      //     //     }),
-      //   ],
-      //   title: Text('Group'),
-      //   backgroundColor: Colors.lightBlueAccent,
-      // ),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            MessageStream(),
-            Container(
-              decoration: kMessageContainerDecoration,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      child: TextField(
-                        controller: textController,
-                        onChanged: (value) {
-                          messagetext = value;
+    return Consumer<CityProvider>(
+      builder:(context,cp,child)=> Scaffold(
+        appBar: buildAppBar(cp.city,cp.grpName),
+        // AppBar(
+        //   leading: Container(),
+        //   actions: <Widget>[
+        //     // IconButton(
+        //     //     icon: Icon(Icons.close),
+        //     //     onPressed: () async {
+        //     //       await _auth.signOut();
+        //     //       Navigator.pop(context);
+        //     //       //Implement logout functionality
+        //     //     }),
+        //   ],
+        //   title: Text('Group'),
+        //   backgroundColor: Colors.lightBlueAccent,
+        // ),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              MessageStream(),
+              Container(
+                decoration: kMessageContainerDecoration,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        child: TextField(
+                          controller: textController,
+                          onChanged: (value) {
+                            messagetext = value;
 
-                        },
-                        decoration: kMessageTextFieldDecoration,
+                          },
+                          decoration: kMessageTextFieldDecoration,
+                        ),
                       ),
                     ),
-                  ),
-                  Consumer<CityProvider>(
-                      builder: ((context, city, child) =>  MaterialButton(
-                    onPressed: () async {
-                      textController.clear();
-                      try {
-                        {
-                          if (messagetext.isNotEmpty)
-                            _firestore.collection('messages').doc(city.city).collection(city.grpName).add({
-                              'sender': loggedInUser.email,
-                              'text': messagetext
-                            });
+                    Consumer<CityProvider>(
+                        builder: ((context, city, child) =>  MaterialButton(
+                      onPressed: () async {
+                        textController.clear();
+                        try {
+                          {
+                            if (messagetext.isNotEmpty)
+                              _firestore.collection('messages').doc(city.city).collection(city.grpName).add({
+                                'sender': loggedInUser.email,
+                                'text': messagetext
+                              });
+                          }
+                        } catch (e) {
+                          print(e);
                         }
-                      } catch (e) {
-                        print(e);
-                      }
 
-                    },
-                    child: Text(
-                      'Send',
-                      style: kSendButtonTextStyle,
-                    ),
-                  ))),
-                ],
+                      },
+                      child: Text(
+                        'Send',
+                        style: kSendButtonTextStyle,
+                      ),
+                    ))),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

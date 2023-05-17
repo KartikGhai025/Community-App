@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tango/screens/Add_Screen.dart';
 import 'package:tango/screens/home.dart';
 import 'package:tango/screens/profile.dart';
+import 'package:tango/screens/temp.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -15,6 +16,12 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     appBar:AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.pinkAccent,
+        centerTitle: true,
+        title: Text("Tango"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           setState(() {
@@ -22,8 +29,8 @@ class _LandingScreenState extends State<LandingScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor:  Color.fromARGB(255, 208, 208, 255),
-        selectedItemColor: Colors.red,
+        backgroundColor:  Colors.pinkAccent,
+        selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
         currentIndex: pageIdx,
         items: const [
@@ -33,7 +40,7 @@ class _LandingScreenState extends State<LandingScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add, size: 30),
-            label: ' ',
+            label: 'Create Group',
           ),          BottomNavigationBarItem(
             icon: Icon(Icons.person, size: 30),
             label: 'Profile',
@@ -57,4 +64,4 @@ class _LandingScreenState extends State<LandingScreen> {
   }
 }
 
-List<Widget> pages = [HomeScreen(),AddGroup(), Profile()];
+List<Widget> pages = [HomeScreen(),AddGroup(), ProfileApp()];
